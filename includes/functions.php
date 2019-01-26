@@ -60,7 +60,7 @@ function verifyPostal($postal, $province){
 
     $newline = "<br />";
     //Please include and reference in $path_to_wsdl variable.
-    $path_to_wsdl = "includes/Fedex/wsdl/CountryService/CountryService_v5.wsdl";
+    $path_to_wsdl = "includes/fedex/wsdl/CountryService/CountryService_v5.wsdl";
 
     ini_set("soap.wsdl_cache_enabled", "0");
 

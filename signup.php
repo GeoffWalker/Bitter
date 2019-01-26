@@ -171,7 +171,7 @@ if (isset($_GET["msg"])){
 							<div class="cols-sm-10">
 								<div class="input-group">
 									
-									<select name="province" id="province" class="textfield1" required><?php echo $vprovince; ?> 
+									<select name="province" id="province" class="textfield1" required> 
 										<option> </option>
 										<option value="BC">British Columbia</option>
 										<option value="AB">Alberta</option>
