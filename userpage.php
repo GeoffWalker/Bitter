@@ -17,7 +17,6 @@ include('includes/functions.php');
 
     <!-- Bootstrap core CSS -->
     <link href="includes/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="includes/starter-template.css" rel="stylesheet">
 	<!-- Bootstrap core JavaScript-->
@@ -27,7 +26,7 @@ include('includes/functions.php');
   </head>
 
   <body>
-	<?php include('includes/Header.php'); ?>
+	<?php include('includes/header.php'); ?>
 	<BR><BR>
     <div class="container">
 		<div class="row">

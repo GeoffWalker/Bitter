@@ -24,7 +24,7 @@
 			<img class="bannericons" src="images/bell.png">Notifications</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link" href="nessages.php">
+            <a class="nav-link" href="messages.php">
 			<img class="bannericons" src="images/messages.png">Messages</a>
           </li>
           <li class="nav-item">
@@ -39,8 +39,7 @@
         </ul>
 		<li class="nav-item dropdown right">
             <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<?php User::getProfPic($_SESSION["SESS_MEMBER_ID"]); ?>
-                        <!--<img class="bannericons" src="images/profilepics/default.jfif">-->
+			<?php user::getProfPic($_SESSION["SESS_MEMBER_ID"]); ?>
 			</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="logout.php">Logout</a>

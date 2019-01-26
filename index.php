@@ -17,7 +17,7 @@ if (!isset($_SESSION["SESS_MEMBER_ID"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="DESC MISSING">
-    <meta name="author" content="Nick Taggart, nick.taggart@nbcc.ca">
+    <meta name="author" content="Geoff Walker">
     <link rel="icon" href="favicon.ico">
 
     <title>Bitter - Social Media for Trolls, Narcissists, Bullies and Presidents</title>

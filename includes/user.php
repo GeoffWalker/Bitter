@@ -77,7 +77,7 @@ class user {
             $_SESSION["SESS_FIRST_NAME"] = $row["first_name"];
             $_SESSION["SESS_LAST_NAME"] = $row["last_name"];
             $_SESSION["SESS_MEMBER_ID"] = $row["user_id"];
-            header("Location:index.php");
+            header("location:index.php");
         }
         else{
             $msg = "Login failed. Please try again.";
@@ -90,7 +90,7 @@ class user {
         $userResult = mysqli_query($GLOBALS["con"], $objectSQL);
 
         $row = mysqli_fetch_array($userResult);
-        $currentUser = new User($row["user_id"], $row["screen_name"], $row["password"], $row["first_name"], $row["last_name"], $row["address"], $row["province"], $row["postal_code"], $row["contact_number"], $row["email"], $row["date_created"], $row["profile_pic"], $row["location"], $row["description"], $row["url"]);
+        $currentUser = new user($row["user_id"], $row["screen_name"], $row["password"], $row["first_name"], $row["last_name"], $row["address"], $row["province"], $row["postal_code"], $row["contact_number"], $row["email"], $row["date_created"], $row["profile_pic"], $row["location"], $row["description"], $row["url"]);
 
         return $currentUser;
     }
@@ -281,7 +281,7 @@ class user {
                     echo " | Following ";
                 }
                 else{
-                    echo '&nbsp;<a href = "Follow_proc.php?user_id=' . $currentUser->userId . '"><input type="button" style = "margin: 0" name="Follow" id="button" value="Follow"/></a>';
+                    echo '&nbsp;<a href = "follow_proc.php?user_id=' . $currentUser->userId . '"><input type="button" style = "margin: 0" name="Follow" id="button" value="Follow"/></a>';
                 }
 
             echo "<hr width=\"100%\">";
