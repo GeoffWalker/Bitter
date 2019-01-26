@@ -17,7 +17,7 @@ function whoToTroll($con){
                 echo '<img class="bannericons" src="images/profilepics/default.jfif" title style>';
             }
         echo '<a href="userpage.php?user_id=' . $row["user_id"] . '">' . $info . '</a></div>';
-        echo '<a href = "Follow_proc.php?user_id=' . $row["user_id"] . '"><input type="button" style = "margin: 0" name="Follow" id="button" value="Follow"/></a><hr>';
+        echo '<a href = "follow_proc.php?user_id=' . $row["user_id"] . '"><input type="button" style = "margin: 0" name="Follow" id="button" value="Follow"/></a><hr>';
     };
 }
 
