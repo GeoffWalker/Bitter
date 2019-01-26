@@ -42,7 +42,7 @@ if (isset($_GET["msg"])){
         <div class="row">
             <div class="main-login main-center">
                     <h5>Reply to the Tweet, Troll the Troll!</h5>
-                    <?php echo '<form method="post" id="reply" action="Reply_proc.php?tweet_id='. $_GET["tweet_id"] .'">'; ?>
+                    <?php echo '<form method="post" id="reply" action="reply_proc.php?tweet_id='. $_GET["tweet_id"] .'">'; ?>
                         <div class="form-group">
                                 <textarea required class="form-control" name="myReply" id="myReply" rows="1" maxlength="280"></textarea>
                                 <input type="submit" name="button" id="button" value="Reply" class="btn btn-primary btn-lg btn-block login-button"/>

@@ -150,7 +150,7 @@ if (isset($_GET["msg"])){
 							<div class="cols-sm-10">
 								<div class="input-group">
 									
-									<input type="text" class="form-control" required name="phone" id="phone"  placeholder="Enter your Phone Number"/>
+									<input type="text" class="form-control" required name="phone" id="phone"  placeholder="5064445555"/>
 								</div>
 							</div>
 						</div>
@@ -160,7 +160,7 @@ if (isset($_GET["msg"])){
 							<div class="cols-sm-10">
 								<div class="input-group">
 									
-									<input type="text" class="form-control" required name="address" id="address" maxlength="200" placeholder="Enter your Address"/>
+									<input type="text" class="form-control" required name="address" id="address" maxlength="200" placeholder="123 Main st."/>
 								</div>
 							</div>
 						</div>
@@ -196,7 +196,7 @@ if (isset($_GET["msg"])){
 							<div class="cols-sm-10">
 								<div class="input-group">
 									
-									<input type="text" class="form-control" required name="postalCode" id="postalCode"  placeholder="Enter your Postal Code"/>
+									<input type="text" class="form-control" required name="postalCode" id="postalCode"  placeholder="A1A1A1"/>
 								</div>
 							</div>
 						</div>

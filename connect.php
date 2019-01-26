@@ -1,8 +1,8 @@
 <?php
 //these are defined as constants
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'localhost:3306');
+define('DB_USER', 'server');
+define('DB_PASS', 'Po:l00lk-');
 define('DB_NAME', 'bitter-geoffwalker');
 
 global $con;
