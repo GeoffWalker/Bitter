@@ -56,7 +56,7 @@ function userExists($con, $userid){
 }
 
 function verifyPostal($postal, $province){
-    require_once('includes/Fedex/fedex-common.php');
+    require_once('includes/fedex/fedex-common.php');
 
     $newline = "<br />";
     //Please include and reference in $path_to_wsdl variable.
