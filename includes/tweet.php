@@ -53,13 +53,13 @@ class tweet {
             if($tweet["replyId"] == 0){//make sure replies aren't displayed yet.
                 echo '<div>' . '<a href="userpage.php?user_id='. $tweet["userid"] . '">' . $tweet["fname"] . ' ' . $tweet["lname"] . ' @' . $tweet["sname"] . '</a> ' . timePassed($tweet["tweetDate"]);
                 // if statement checks if the tweet is a retweet, and appends retweet info if it is.
-                if ($tweet["originalId"] <> 0){ echo "<b> retweeted from " . User::getUserInfo(User::getUserIdFromTweetId($tweet["originalId"]))["first_name"] . " " . User::getUserInfo(User::getUserIdFromTweetId($tweet["originalId"]))["last_name"] . "</b>";}
+                if ($tweet["originalId"] <> 0){ echo "<b> retweeted from " . user::getUserInfo(user::getUserIdFromTweetId($tweet["originalId"]))["first_name"] . " " . user::getUserInfo(user::getUserIdFromTweetId($tweet["originalId"]))["last_name"] . "</b>";}
                 echo '<br>' . $tweet["tweet_text"] .'</div>';
-                if(!Tweet::IsLiked($tweet["tweet_id"])){echo '<a href="Like_proc.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/like.ico"></a>';}
+                if(!tweet::IsLiked($tweet["tweet_id"])){echo '<a href="like_proc.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/like.ico"></a>';}
                 echo '<a href="retweet.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/retweet.png"></a><a href="reply.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/reply.png"></a>';
             }
             //display replies
-            Tweet::getReplies($tweet["tweet_id"]);
+            tweet::getReplies($tweet["tweet_id"]);
 
             if($tweet["replyId"] == 0){
                 echo "<hr>";
@@ -72,7 +72,7 @@ class tweet {
         $tweets = mysqli_query($GLOBALS["con"], $tweetSQL);
         echo "<h2>Likes</h2>";
         while ($tweet = mysqli_fetch_array($tweets)){
-            $likedUserInfo = User::getUserInfo($tweet["likedUser"]);
+            $likedUserInfo = user::getUserInfo($tweet["likedUser"]);
             echo '<div>' . '<a href="userpage.php?user_id='. $tweet["likedUser"] . '">';
             if($likedUserInfo["profile_pic"] != null){
                 echo '<img class="bannericons" src="images/profilepics/' . $likedUserInfo["profile_pic"] . '" title style>';
@@ -91,9 +91,9 @@ class tweet {
 
             while ($tweet1 = mysqli_fetch_array($replies)){
                     echo '<div style="padding:1px 1px 1px 3em;"><div style="border-radius: 15px; padding: 5px; background-color: #bfbfbf;">' . '<a href="userpage.php?user_id='. $tweet1["userid"] . '">' . $tweet1["fname"] . ' ' . $tweet1["lname"] . ' @' . $tweet1["sname"] . '</a> ' . "<b> Replied </b>" .timePassed($tweet1["tweetDate"]);
-                    if ($tweet1["originalId"] <> 0){ echo "<b> retweeted from " . User::getUserInfo(User::getUserIdFromTweetId($tweet1["originalId"]))["first_name"] . " " . User::getUserInfo(User::getUserIdFromTweetId($tweet1["originalId"]))["last_name"] . "</b>";}
+                    if ($tweet1["originalId"] <> 0){ echo "<b> retweeted from " . user::getUserInfo(user::getUserIdFromTweetId($tweet1["originalId"]))["first_name"] . " " . user::getUserInfo(user::getUserIdFromTweetId($tweet1["originalId"]))["last_name"] . "</b>";}
                     echo '<br>' . $tweet1["tweet_text"] . '<br>';
-                    if(!Tweet::IsLiked($tweetId)){echo '<a href="Like_proc.php?tweet_id=' .$tweetId. '">&nbsp;<input type="image" style="height: 30px" src="images/like.ico">';}
+                    if(!tweet::IsLiked($tweetId)){echo '<a href="like_proc.php?tweet_id=' .$tweetId. '">&nbsp;<input type="image" style="height: 30px" src="images/like.ico">';}
                     echo '</a><a href="retweet.php?tweet_id=' .$tweet1["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px; padding: 2px" src="images/retweet.png"></a></div></div>';
             }
     }
@@ -106,13 +106,13 @@ class tweet {
             if($tweet["replyId"] == 0){//make sure replies aren't displayed yet.
                 echo '<div>' . '<a href="userpage.php?user_id='. $tweet["userid"] . '">' . $tweet["fname"] . ' ' . $tweet["lname"] . ' @' . $tweet["sname"] . '</a> ' . timePassed($tweet["tweetDate"]);
                 // if statement checks if the tweet is a retweet, and appends retweet info if it is.
-                if ($tweet["originalId"] <> 0){ echo "<b> retweeted from " . User::getUserInfo(User::getUserIdFromTweetId($tweet["originalId"]))["first_name"] . " " . User::getUserInfo(User::getUserIdFromTweetId($tweet["originalId"]))["last_name"] . "</b>";}
+                if ($tweet["originalId"] <> 0){ echo "<b> retweeted from " . user::getUserInfo(user::getUserIdFromTweetId($tweet["originalId"]))["first_name"] . " " . user::getUserInfo(user::getUserIdFromTweetId($tweet["originalId"]))["last_name"] . "</b>";}
                 echo '<br>' . $tweet["tweet_text"] .'</div>';
-            if(!Tweet::IsLiked($tweet["tweet_id"])){echo '<a href="Like_proc.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/like.ico"></a>';}
+            if(!tweet::IsLiked($tweet["tweet_id"])){echo '<a href="like_proc.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/like.ico"></a>';}
             echo '<a href="retweet.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/retweet.png"></a><a href="reply.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/reply.png"></a>';
             }
             //display replies
-            Tweet::getReplies($tweet["tweet_id"]);
+            tweet::getReplies($tweet["tweet_id"]);
 
             if($tweet["replyId"] == 0){
                 echo "<hr>";
@@ -137,7 +137,7 @@ class tweet {
     static function reply($replytweetId, $replyText){
 
         //create tweet and get info.
-        $replyTweet = Tweet::TweetInfo($replytweetId);
+        $replyTweet = tweet::TweetInfo($replytweetId);
 
         $replySQL = "INSERT INTO tweets (tweet_text, user_id, original_tweet_id, reply_to_tweet_id) VALUES ('".$replyText."', '".$_SESSION["SESS_MEMBER_ID"]."', '".$replyTweet->originalTweetId."', '".$replyTweet->tweetId."');";
 
@@ -180,7 +180,7 @@ class tweet {
         $tweetSQL = "SELECT * FROM tweets WHERE tweet_id = '" .$tweetId. "';";
         $result = mysqli_query($GLOBALS["con"], $tweetSQL);
         $row = mysqli_fetch_array($result);
-        $returnTweet = new Tweet($row["tweet_id"], $row["tweet_text"], $row["user_id"], $row["original_tweet_id"], $row["reply_to_tweet_id"], $row["date_created"]);
+        $returnTweet = new tweet($row["tweet_id"], $row["tweet_text"], $row["user_id"], $row["original_tweet_id"], $row["reply_to_tweet_id"], $row["date_created"]);
         return $returnTweet;
     }
 
@@ -194,7 +194,7 @@ class tweet {
             if($tweet["replyId"] == 0){//make sure replies aren't displayed yet.
                 echo '<div>' . '<a href="userpage.php?user_id='. $tweet["userid"] . '">' . $tweet["fname"] . ' ' . $tweet["lname"] . ' @' . $tweet["sname"] . '</a> ' . timePassed($tweet["tweetDate"]);
                 // if statement checks if the tweet is a retweet, and appends retweet info if it is.
-                if ($tweet["originalId"] <> 0){ echo "<b> retweeted from " . User::getUserInfo(User::getUserIdFromTweetId($tweet["originalId"]))["first_name"] . " " . User::getUserInfo(User::getUserIdFromTweetId($tweet["originalId"]))["last_name"] . "</b>";}
+                if ($tweet["originalId"] <> 0){ echo "<b> retweeted from " . user::getUserInfo(User::getUserIdFromTweetId($tweet["originalId"]))["first_name"] . " " . user::getUserInfo(user::getUserIdFromTweetId($tweet["originalId"]))["last_name"] . "</b>";}
                 echo '<br>' . $tweet["tweet_text"] .'</div>';
                 echo '<input type="image" style="height: 30px" src="images/like.ico"><a href="retweet.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/retweet.png"></a><a href="reply.php?tweet_id=' .$tweet["tweet_id"]. '">&nbsp;<input type="image" style="height: 30px" src="images/reply.png"></a>';
                 echo "<hr width=\"100%\"><br>";
@@ -208,7 +208,7 @@ class tweet {
         $tweets = mysqli_query($GLOBALS["con"], $sql);
         echo "<h2>Retweets</h2>";
         while ($tweet = mysqli_fetch_array($tweets)){
-            $likedUserInfo = User::getUserInfo($tweet["user_id"]);
+            $likedUserInfo = user::getUserInfo($tweet["user_id"]);
             echo '<div>' . '<a href="userpage.php?user_id='. $tweet["user_id"] . '">';
             if($likedUserInfo["profile_pic"] != null){
                 echo '<img class="bannericons" src="images/profilepics/' . $likedUserInfo["profile_pic"] . '" title style>';
@@ -226,7 +226,7 @@ class tweet {
         $tweets = mysqli_query($GLOBALS["con"], $sql);
         echo "<h2>Replies</h2>";
         while ($tweet = mysqli_fetch_array($tweets)){
-            $likedUserInfo = User::getUserInfo($tweet["user_id"]);
+            $likedUserInfo = user::getUserInfo($tweet["user_id"]);
             echo '<div>' . '<a href="userpage.php?user_id='. $tweet["user_id"] . '">';
             if($likedUserInfo["profile_pic"] != null){
                 echo '<img class="bannericons" src="images/profilepics/' . $likedUserInfo["profile_pic"] . '" title style>';

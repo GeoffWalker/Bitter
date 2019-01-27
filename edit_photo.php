@@ -17,7 +17,7 @@ include("includes/header.php");
     <meta name="author" content="GeoffWalker: geoff-walker@hotmail.com">
     <link rel="icon" href="favicon.ico">
 
-    <title>Contact Us - Bitter</title>
+    <title>Upload Profile Pic - Bitter</title>
 
     <!-- Bootstrap core CSS -->
     <link href="includes/bootstrap.min.css" rel="stylesheet">
